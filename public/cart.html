@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-sm-4">
+    <div ng-include="'nav.html'"></div>
+  </div>
+  <div class="col-sm-4">
+    <div class="row">
+      <div class="well" id="cart-form">
+        <h4 class="heading">MENU ITEMS</h4>
+        <form>
+          <div class="row">
+            <div class="col-sm-7">
+              <input class="form-control" ng-model="formData.name" placeholder="Food Item" type="text">
+            </div>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input class="form-control" ng-model="formData.price" placeholder="Price" type="text">
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-success" ng-click="createFood()" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="well" id="cart">
+      <h4 class="heading">MENU CART</h4>
+      <div id="food-list">
+        <div class="ng-show" ng-show="foods.length != 0">
+          <span class="item-count">{{ foods.length }}
+            items in Cart</span>
+        </div>
+        <div class="food" ng-repeat="food in foods">
+          <div class="row">
+            <div class="col-sm-8">
+              <span class="food-name">{{ food.name }}</span>
+            </div>
+            <div class="col-sm-2">
+              <span class="food-price">{{ food.price | currency }}</span>
+            </div>
+            <div class="col-sm-2">
+              <button class="btn btn-default" ng-click="deleteFood(food._id)" type="button">
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="ng-show" ng-show="foods.length == 0">
+          <span class="empty-message">No Items in Cart!</span>
+        </div>
+      </div>
+    </div>
+        <div>
+            <div class="col-sm-6">
+              <button class="btn btn-success" ng-click="checkout()" type="button">
+                BUY
+                {{ total | currency }}
+              </button>
+            </div>
+    </div>
+  </div>
+</div>

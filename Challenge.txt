@@ -1,0 +1,4 @@
+Order history challenge has been successfully implemented as a part of Phase 5 challenge!
+
+
+A separate tab "order history" has been created in the first page to help navigate to view the order history. The resultant page will have the order history fetched from the databse.

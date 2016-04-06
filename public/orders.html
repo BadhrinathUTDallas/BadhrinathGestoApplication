@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-sm-4">
+    <div ng-include="'nav.html'"></div>
+  </div>
+  <div class="col-sm-4">
+    <div class="row">
+      <div class="well" id="orders">
+        <h4 class="heading">ORDER HISTORY</h4>
+        <div id="orders-list">
+          <div class="ng-show" ng-show="orders.length != 0">
+            <span class="item-count">{{ orders.length }}
+              orders</span>
+          </div>
+          <a class="order" ng-href="/#/order/{{order._id}}" ng-repeat="order in orders">
+            <div class="row">
+              <div class="col-sm-1">
+                {{$index + 1}}
+              </div>
+              <div class="col-sm-7">
+                <span class="order-cost">{{ order.total_cost | currency }}</span>
+              </div>
+              <div class="col-sm-4">
+                <span class="order-date">{{ order.order_date | date }}</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="row">
+      <div class="well" id="order">
+        <h4 class="heading">ORDER HISTORY</h4>
+        <div id="foods-list">
+          <div class="ng-show" ng-show="foods.length != 0">
+            <span class="item-count">{{ foods.length }}
+              items</span>
+          </div>
+          <div class="food" ng-repeat="food in foods">
+            <div class="row">
+              <div class="col-sm-9">
+                <span class="food-name">{{ food.name }}</span>
+              </div>
+              <div class="col-sm-3">
+                <span class="food-price">{{ food.price | currency }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row links">
+  <div class="text-center">
+    <a class="btn btn-success" ng-href="/#/">Go Back to Order</a>
+  </div>
+</div>
